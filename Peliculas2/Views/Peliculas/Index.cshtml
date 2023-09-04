@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Peliculas2.Models.Pelicula>
+@* 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} *@
+
+<link href="~/css/listart.css" rel="stylesheet" />
+
+<p>
+    <a asp-action="Create">Crear películas</a>
+</p>
+
+<ul>
+    <li>Acción</li>
+</ul>
+<div class="contenedor">
+@foreach(var item in Model)
+{
+    
+<div class="card">
+            <img src="@Html.DisplayFor(modelItem => item.Sipnosis)" alt="Poster">
+            <div class="card-info">
+                <h2>"@Html.DisplayFor(modelIem=>item.Titulo)"</h2>
+                <p>"@Html.DisplayFor(modelIem=>item.Director)"</p>
+                <p>"@Html.DisplayFor(modelIem=>item.Genero)"</p>
+                <p>"@Html.DisplayFor(modelIem=>item.Calificacion)"</p>
+
+            </div>
+</div>
+  
+}
+</div>
